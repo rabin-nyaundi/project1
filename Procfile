@@ -1,1 +1,1 @@
-web: gunicorn ecomerce.wsgi —log-file -
+web: gunicorn redwhale.wsgi —log-file -
