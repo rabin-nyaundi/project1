@@ -26,7 +26,8 @@ def scrappe_view(request):
         name = property.find_element_by_class_name('property-name').text
         details = property.find_element_by_class_name('property-details').text
         address = property.find_element_by_class_name('property-address').text
-        logo = property.find_element_by_class_name('ng-star-inserted ').text
+        logo = property.find_element_by_class_name(
+            'brokerage-logo').get_attribute("src")
         
         property_object = Property()
         property_object.name=name
@@ -37,7 +38,7 @@ def scrappe_view(request):
         property_object.save()
         
         # return HttpResponse("saved")
-        print(price, name, details, address, logo)
+        print("my logo",logo)
         
         
 if __name__ == '__main__':
